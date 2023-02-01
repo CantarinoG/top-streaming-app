@@ -6,7 +6,7 @@ import "../styles/Home.css";
 
 function Home({googleBtnClick})  {
 
-    return <div className="home-container">
+    return <div className="home-page">
         <Logo fontSize="min(8vw, 50px)"/>
         <SignIn
         googleBtnClick={googleBtnClick}/>

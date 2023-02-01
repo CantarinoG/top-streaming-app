@@ -20,7 +20,6 @@ export function initializeFireBase() {
     };
 
     initializeApp(firebaseConfig);
-
 }
 
 export async function authWithGoogle() {

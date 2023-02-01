@@ -1,6 +1,12 @@
+import Header from "../components/Header";
+
+import "../styles/Browse.css";
+
 function Browse() {
 
-    return <h1>Browse</h1>
+    return <div className="browse-page">
+        <Header/>
+    </div>
 
 }
 

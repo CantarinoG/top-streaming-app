@@ -60,7 +60,7 @@ function App() {
 
   const logInWithGoogle = async () => {
     await authWithGoogle();
-    if (isUserLoggedIn) {
+    if (isUserLoggedIn()) {
       setLoggedIn(true);
       switchToBrowse();
     }
