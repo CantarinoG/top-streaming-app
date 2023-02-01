@@ -1,11 +1,10 @@
 import "../styles/SignIn.css";
 
-function SignIn() {
+function SignIn({googleBtnClick}) {
     
     return <div className="sign-in">
         <h1>Enter</h1>
-        <button>Log In With Google</button>
-        <button>Log In With GitHub</button>
+        <button onClick={googleBtnClick}>Log In With Google</button>
     </div>
 
 }

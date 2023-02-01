@@ -1,4 +1,12 @@
 import { initializeApp } from "firebase/app";
+import {
+    getAuth,
+    onAuthStateChanged,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signOut,
+    signInAnonymously
+  } from 'firebase/auth';
 
 export function initializeFireBase() {
 
@@ -13,4 +21,13 @@ export function initializeFireBase() {
 
     initializeApp(firebaseConfig);
 
+}
+
+export async function authWithGoogle() {
+    var provider = new GoogleAuthProvider();
+    await signInWithPopup(getAuth(), provider);
+}
+
+export function isUserLoggedIn() {
+    return getAuth();
 }

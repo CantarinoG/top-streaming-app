@@ -10,8 +10,7 @@ function HomeFooter() {
             <li><a href="#">Privacy</a></li>
         </ul>
         <span className="github">
-            <img src="./icons/githubIcon.svg" alt="GitHub"/>
-            <a href="https://github.com/CantarinoG">By CantarinoG</a>
+            <a href="https://github.com/CantarinoG" target="_blank"><img src="./icons/githubIcon.svg" alt="GitHub"/> By CantarinoG</a>
         </span>
     </div>
 

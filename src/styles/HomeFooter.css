@@ -15,6 +15,11 @@
 .home-footer a:link, .home-footer a:visited, .home-footer a:active {
     color: var(--disable-color);
     text-decoration: none;
+    transition: 0.2s;
+}
+
+.home-footer a:hover {
+    color: white;
 }
 
 .home-footer .github {
