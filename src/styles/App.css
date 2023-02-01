@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+:root {
+    --bebas-neue: 'Bebas Neue', cursive;
+    --roboto: 'Roboto Condensed', sans-serif;
+    --main-color: #6900ff;
+    --main-lighter: #822dfa;
+    --disable-color: #737373;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

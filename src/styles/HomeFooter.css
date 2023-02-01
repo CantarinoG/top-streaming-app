@@ -1,0 +1,27 @@
+.home-footer {
+    font-family: var(--roboto);
+    color: var(--disable-color);
+}
+
+.home-footer ul {
+    padding: 0 8px 0 8px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    gap: 8vw;
+}
+
+.home-footer a:link, .home-footer a:visited, .home-footer a:active {
+    color: var(--disable-color);
+    text-decoration: none;
+}
+
+.home-footer .github {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
