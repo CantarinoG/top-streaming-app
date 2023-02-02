@@ -43,6 +43,23 @@ header button:hover {
     transform: scale(1.1);
 }
 
+header .sign-out {
+    background-color: var(--main-color);
+    color: white;
+    font-family: var(--roboto);
+    padding: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 4px;
+}
+
+header .header-options {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
 @media (max-width: 370px) {
 
     header {
@@ -50,11 +67,11 @@ header button:hover {
     }
 
     header nav {
-        gap: 0.5em;
+        gap: 0.1em;
     }
 
     header ul {
-        gap: 0.5em;
+        gap: 0.1em;
     }
 
 }

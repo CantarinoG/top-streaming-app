@@ -16,6 +16,7 @@ function Header() {
             <button><img src="./icons/searchIcon.svg" alt="Search"/></button>
             <button><img src="./icons/notificationIcon.svg" alt="Notification"/></button>
             <button><img src="./icons/settingsIcon.svg" alt="Settings"/></button>
+            <button className="sign-out">Sign Out</button>
         </div>
 
     </header>
