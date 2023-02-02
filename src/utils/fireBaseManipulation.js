@@ -1,12 +1,16 @@
 import { initializeApp } from "firebase/app";
 import {
     getAuth,
-    onAuthStateChanged,
     GoogleAuthProvider,
     signInWithPopup,
-    signOut,
-    signInAnonymously
   } from 'firebase/auth';
+  import {
+    getFirestore,
+    collection,
+    query,
+    getDocs
+} from 'firebase/firestore';
+
 
 export function initializeFireBase() {
 
@@ -29,4 +33,20 @@ export async function authWithGoogle() {
 
 export function isUserLoggedIn() {
     return getAuth();
+}
+
+export async function loadMedia() {
+
+        const q = query(collection(getFirestore(), "media"));
+
+        const mediaArray = [];
+
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach(async (doc) => {
+        await mediaArray.push(doc.data());
+});
+
+    return mediaArray;
+      
+    
 }

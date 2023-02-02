@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"; 
 
+import {getFirestore, collection, query, getDocs } from 'firebase/firestore';
 import { initializeFireBase, authWithGoogle, isUserLoggedIn } from "./utils/fireBaseManipulation";
 
 import "./styles/App.css";
@@ -17,6 +18,7 @@ function App() {
   const [showCatalog, setShowCatalog] = useState(false);
   const [showDisplay, setShowDisplay] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [data, setData] = useState([]);
 
 
   //LifeCycle:
@@ -26,9 +28,20 @@ function App() {
       setLoggedIn(true);
       switchToBrowse();
     }
+    loadMedia();
   }, []);
 
   //Functions:
+
+  async function loadMedia() {
+    const q = query(collection(getFirestore(), "media"));
+    const mediaArray = [];
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach(async (doc) => {
+    await mediaArray.push(doc.data());
+});
+    setData(mediaArray);
+}
 
   const switchToHome = () => {
     setShowHome(true);
@@ -69,7 +82,7 @@ function App() {
   //Render:
   return <div className="app-container">
     {showHome ? <Home googleBtnClick={logInWithGoogle}/> : null}
-    {showBrowse && loggedIn ? <Browse/> : null}
+    {showBrowse && loggedIn ? <Browse titles={data}/> : null}
     {showCatalog && loggedIn ? <Catalog/> : null}
     {showDisplay && loggedIn ? <Display/> : null}
   </div>
