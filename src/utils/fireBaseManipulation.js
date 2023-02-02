@@ -35,18 +35,12 @@ export function isUserLoggedIn() {
     return getAuth();
 }
 
-export async function loadMedia() {
-
-        const q = query(collection(getFirestore(), "media"));
-
-        const mediaArray = [];
-
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach(async (doc) => {
-        await mediaArray.push(doc.data());
+export async function loadMedia(callback) {
+    const q = query(collection(getFirestore(), "media"));
+    const mediaArray = [];
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach(async (doc) => {
+    await mediaArray.push(doc.data());
 });
-
-    return mediaArray;
-      
-    
+    callback(mediaArray);
 }

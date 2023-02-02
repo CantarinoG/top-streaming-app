@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"; 
 
-import {getFirestore, collection, query, getDocs } from 'firebase/firestore';
-import { initializeFireBase, authWithGoogle, isUserLoggedIn } from "./utils/fireBaseManipulation";
+import { initializeFireBase, authWithGoogle, isUserLoggedIn, loadMedia } from "./utils/fireBaseManipulation";
 
 import "./styles/App.css";
 
@@ -28,20 +27,10 @@ function App() {
       setLoggedIn(true);
       switchToBrowse();
     }
-    loadMedia();
+    loadMedia(setData);
   }, []);
 
   //Functions:
-
-  async function loadMedia() {
-    const q = query(collection(getFirestore(), "media"));
-    const mediaArray = [];
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach(async (doc) => {
-    await mediaArray.push(doc.data());
-});
-    setData(mediaArray);
-}
 
   const switchToHome = () => {
     setShowHome(true);
