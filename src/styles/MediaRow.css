@@ -1,10 +1,39 @@
 .media-row {
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 100%;
+    padding: 1vw 7vw 1vw 7vw;
 }
 
 .media-row .media {
+    display: inline-block;
     aspect-ratio: 17/10;
-    width: 25vw;
-    border: 1px solid red;
+    width: calc((85vw)/3);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.media-row .media .thumb-title {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-family: var(--bebas-neue);
+    font-size: 2vw;
+}
+
+.media-row .media-row-title {
+    color: white;
+    font-weight: bold;
+    font-size: 2.5vw;
+    font-family: var(--roboto);
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    aspect-ratio: 1/1;
+    height: 4vw !important;
 }

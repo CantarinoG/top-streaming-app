@@ -1,10 +1,11 @@
 .browse-page {
     background-color: black;
     min-height: 100vh;
+    overflow-y: hidden;
 }
 
 .browse-page .rows-container {
     position: relative;
-    top: -15%;
+    top: -10%;
     z-index: 1;
 }

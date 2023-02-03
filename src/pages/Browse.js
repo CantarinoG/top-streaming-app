@@ -10,7 +10,10 @@ function Browse({titles}) {
         <Header/>
         <Hero titles={titles}/>
         <div className="rows-container">
-            <MediaRow/>
+            <MediaRow titles={titles} rowTitle="Top 10 Today"/>
+            <MediaRow titles={titles} rowTitle="Recommended For You"/>
+            <MediaRow titles={titles} rowTitle="Trending"/>
+            <MediaRow titles={titles} rowTitle="Editor's Choice"/>
         </div>
     </div>
 
