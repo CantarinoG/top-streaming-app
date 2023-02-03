@@ -60,18 +60,30 @@ header .header-options {
     gap: 2px;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 420px) {
 
     header {
         padding: 0;
     }
 
+    header img {
+        height: 1em;
+    }
+
+    header .sign-out {
+        font-size: 0.75em;
+    }
+
     header nav {
-        gap: 0.1em;
+        gap: 0.4em;
+    }
+
+    header button {
+        font-size: 0.75em;
     }
 
     header ul {
-        gap: 0.1em;
+        gap: 0.4em;
     }
 
 }

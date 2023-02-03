@@ -12,10 +12,10 @@ function Hero({titles}) {
       }}>
         <div className="gradient">
             <span className="hero-title">Two Souls</span>
-            <span className="hero-description"></span>
+            <span className="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nisi nunc, luctus vitae diam quis, placerat accumsan mi.</span>
             <div className="hero-buttons">
-                <button>Watch</button>
-                <button>More Info</button>
+                <button><img src="./icons/playIcon.svg" alt=""/>Watch</button>
+                <button><img src="./icons/infoIcon.svg" alt=""/>More Info</button>
             </div>
         </div>
 
