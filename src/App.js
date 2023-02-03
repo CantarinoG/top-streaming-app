@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react"; 
 
-import { initializeFireBase, authWithGoogle, isUserLoggedIn, loadMedia } from "./utils/fireBaseManipulation";
+import { initializeFireBase, authWithGoogle, isUserLoggedIn, loadMedia, signOutUser } from "./utils/fireBaseManipulation";
 
 import "./styles/App.css";
 
+import Header from "./components/Header";
 import Home from "./pages/Home";
 import Browse from "./pages/Browse";
 import Catalog from "./pages/Catalog";
@@ -68,11 +69,17 @@ function App() {
     }
   }
 
+  const signOutApp = () => {
+    signOutUser();
+    setLoggedIn(false);
+    switchToHome();
+  }
+
   //Render:
   return <div className="app-container">
     {showHome ? <Home googleBtnClick={logInWithGoogle}/> : null}
-    {showBrowse && loggedIn ? <Browse titles={data}/> : null}
-    {showCatalog && loggedIn ? <Catalog/> : null}
+    {showBrowse && loggedIn ? <><Header browseClick={switchToBrowse} catalogClick={switchToCatalog} signOutClick={signOutApp}/><Browse titles={data}/></> : null}
+    {showCatalog && loggedIn ? <><Header browseClick={switchToBrowse} catalogClick={switchToCatalog} signOutClick={signOutApp}/><Catalog/></> : null}
     {showDisplay && loggedIn ? <Display/> : null}
   </div>
 

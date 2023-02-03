@@ -21,9 +21,10 @@
     color: white;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 10px;
     font-family: var(--bebas-neue);
-    font-size: 2vw;
+    font-size: calc(10px + 0.6vw);
+    text-shadow: 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000;
 }
 
 .media-row .media-row-title {

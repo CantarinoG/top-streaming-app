@@ -20,7 +20,7 @@ function MediaRow({titles, rowTitle}) {
             <Carousel interval={null} indicators={false}>
                 <Carousel.Item>
                 {firstPanel.map((title) => 
-                <div className="media" style={{ 
+                <div className="media" id={title.id} key={title.id} style={{ 
                     backgroundImage: `url(${title.image})` 
                   }}>
                     <span className="thumb-title">{title.name}</span>
@@ -29,7 +29,7 @@ function MediaRow({titles, rowTitle}) {
                 </Carousel.Item>
                 <Carousel.Item>
                 {secondPanel.map((title) => 
-                <div className="media" style={{ 
+                <div className="media" id={title.id} key={title.id} style={{ 
                     backgroundImage: `url(${title.image})` 
                   }}>
                     <span className="thumb-title">{title.name}</span>
@@ -38,7 +38,7 @@ function MediaRow({titles, rowTitle}) {
                 </Carousel.Item>
                 <Carousel.Item>
                 {thirdPanel.map((title) => 
-                <div className="media" style={{ 
+                <div className="media" id={title.id} key={title.id} style={{ 
                     backgroundImage: `url(${title.image})` 
                   }}>
                     <span className="thumb-title">{title.name}</span>

@@ -3,6 +3,7 @@ import {
     getAuth,
     GoogleAuthProvider,
     signInWithPopup,
+    signOut
   } from 'firebase/auth';
   import {
     getFirestore,
@@ -44,3 +45,7 @@ export async function loadMedia(callback) {
 });
     callback(mediaArray);
 }
+
+export function signOutUser() {
+    signOut(getAuth());
+  }
