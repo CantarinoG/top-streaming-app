@@ -1,0 +1,10 @@
+.media-row {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.media-row .media {
+    aspect-ratio: 17/10;
+    width: 25vw;
+    border: 1px solid red;
+}
