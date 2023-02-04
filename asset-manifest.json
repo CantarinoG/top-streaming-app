@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/top-streaming-app/static/css/main.30c05e94.css",
+    "main.js": "/top-streaming-app/static/js/main.30698fd0.js",
+    "index.html": "/top-streaming-app/index.html",
+    "main.30c05e94.css.map": "/top-streaming-app/static/css/main.30c05e94.css.map",
+    "main.30698fd0.js.map": "/top-streaming-app/static/js/main.30698fd0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30c05e94.css",
+    "static/js/main.30698fd0.js"
+  ]
+}
