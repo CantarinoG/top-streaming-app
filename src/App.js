@@ -19,14 +19,13 @@ function App() {
   const [showDisplay, setShowDisplay] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [data, setData] = useState([]);
+  const [currentTitle, setCurrentTitle] = useState({id: '-1', name: '', image: '', video: ''});
 
 
   //LifeCycle:
   useEffect(() => { //ComponentDidMount
     initializeFireBase();
     loadMedia(setData);
-    setLoggedIn(true);
-    switchToCatalog();
   }, []);
 
   //Functions:
@@ -73,12 +72,21 @@ function App() {
     console.log(isUserLoggedIn())
   }
 
+  const displayMedia = (e) => {
+    const id = e.target.getAttribute('data-id');
+    const currentData = [...data];
+    const index = currentData.findIndex((title) => title.id == id);
+    const currentTitle = currentData[index];
+    setCurrentTitle(currentTitle);
+    switchToDisplay();
+  }
+
   //Render:
   return <div className="app-container">
     {showHome ? <Home googleBtnClick={logInWithGoogle}/> : null}
-    {showBrowse && loggedIn ? <><Header browseClick={switchToBrowse} catalogClick={switchToCatalog} signOutClick={signOutApp}/><Browse titles={data}/></> : null}
-    {showCatalog && loggedIn ? <><Header browseClick={switchToBrowse} catalogClick={switchToCatalog} signOutClick={signOutApp}/><Catalog titles={data}/></> : null}
-    {showDisplay && loggedIn ? <Display/> : null}
+    {showBrowse && loggedIn ? <><Header browseClick={switchToBrowse} catalogClick={switchToCatalog} signOutClick={signOutApp}/><Browse titles={data} mediaClick={displayMedia}/></> : null}
+    {showCatalog && loggedIn ? <><Header browseClick={switchToBrowse} catalogClick={switchToCatalog} signOutClick={signOutApp}/><Catalog titles={data} mediaClick={displayMedia}/></> : null}
+    {showDisplay && loggedIn ? <Display currentTitle={currentTitle} backClick={switchToBrowse}/> : null}
   </div>
 
 }

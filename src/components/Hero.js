@@ -1,6 +1,6 @@
 import "../styles/Hero.css";
 
-function Hero({titles}) {
+function Hero({titles, mediaClick}) {
 
     let image = null;
     const index = titles.findIndex((title) => title.id === 0);
@@ -14,7 +14,7 @@ function Hero({titles}) {
             <span className="hero-title">Two Souls</span>
             <span className="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nisi nunc, luctus vitae diam quis, placerat accumsan mi.</span>
             <div className="hero-buttons">
-                <button><img src="./icons/playIcon.svg" alt=""/>Watch</button>
+                <button data-id={0} onClick={mediaClick}><img src="./icons/playIcon.svg" alt=""/>Watch</button>
                 <button><img src="./icons/infoIcon.svg" alt=""/>More Info</button>
             </div>
         </div>

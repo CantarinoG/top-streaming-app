@@ -5,7 +5,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 
-function MediaRow({titles, rowTitle}) {
+function MediaRow({titles, rowTitle, mediaClick}) {
 
     const currentTitles = [...titles];
     const shuffledTitlesList = currentTitles.sort(() => (Math.random() - 0.5));
@@ -20,7 +20,7 @@ function MediaRow({titles, rowTitle}) {
             <Carousel interval={null} indicators={false}>
                 <Carousel.Item>
                 {firstPanel.map((title) => 
-                <div className="media" id={title.id} key={title.id} style={{ 
+                <div onClick={mediaClick} className="media" tabIndex="0" data-id={title.id} key={title.id} style={{ 
                     backgroundImage: `url(${title.image})` 
                   }}>
                     <span className="thumb-title">{title.name}</span>
@@ -29,7 +29,7 @@ function MediaRow({titles, rowTitle}) {
                 </Carousel.Item>
                 <Carousel.Item>
                 {secondPanel.map((title) => 
-                <div className="media" id={title.id} key={title.id} style={{ 
+                <div onClick={mediaClick}className="media" tabIndex="0" data-id={title.id} key={title.id} style={{ 
                     backgroundImage: `url(${title.image})` 
                   }}>
                     <span className="thumb-title">{title.name}</span>
@@ -38,7 +38,7 @@ function MediaRow({titles, rowTitle}) {
                 </Carousel.Item>
                 <Carousel.Item>
                 {thirdPanel.map((title) => 
-                <div className="media" id={title.id} key={title.id} style={{ 
+                <div onClick={mediaClick} className="media" tabIndex="0" data-id={title.id} key={title.id} style={{ 
                     backgroundImage: `url(${title.image})` 
                   }}>
                     <span className="thumb-title">{title.name}</span>
