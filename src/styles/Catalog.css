@@ -1,0 +1,53 @@
+.catalog-page {
+    background-color: black;
+    width: 100vw;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.catalog-page h1 {
+    text-align: center;
+    font-family: var(--bebas-neue);
+    color: white;
+    font-size: calc(2em + 2vw);
+    padding: 0.8em 0 0.4em 0;
+}
+
+.catalog-page .grid-container {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-auto-rows: auto;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.catalog-page .grid-item {
+    aspect-ratio: 17/10;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.catalog-page .grid-item:hover {
+    opacity: 0.8;
+}
+
+.catalog-page .grid-title {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-family: var(--bebas-neue);
+    font-size: calc(10px + 0.6vw);
+    text-shadow: 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000, 0px 0px 10px #000;
+}

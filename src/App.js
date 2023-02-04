@@ -24,11 +24,9 @@ function App() {
   //LifeCycle:
   useEffect(() => { //ComponentDidMount
     initializeFireBase();
-    if(isUserLoggedIn()) {
-      setLoggedIn(true);
-      switchToBrowse();
-    }
     loadMedia(setData);
+    setLoggedIn(true);
+    switchToCatalog();
   }, []);
 
   //Functions:
@@ -71,15 +69,15 @@ function App() {
 
   const signOutApp = () => {
     signOutUser();
-    setLoggedIn(false);
     switchToHome();
+    console.log(isUserLoggedIn())
   }
 
   //Render:
   return <div className="app-container">
     {showHome ? <Home googleBtnClick={logInWithGoogle}/> : null}
     {showBrowse && loggedIn ? <><Header browseClick={switchToBrowse} catalogClick={switchToCatalog} signOutClick={signOutApp}/><Browse titles={data}/></> : null}
-    {showCatalog && loggedIn ? <><Header browseClick={switchToBrowse} catalogClick={switchToCatalog} signOutClick={signOutApp}/><Catalog/></> : null}
+    {showCatalog && loggedIn ? <><Header browseClick={switchToBrowse} catalogClick={switchToCatalog} signOutClick={signOutApp}/><Catalog titles={data}/></> : null}
     {showDisplay && loggedIn ? <Display/> : null}
   </div>
 

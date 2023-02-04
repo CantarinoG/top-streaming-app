@@ -3,7 +3,8 @@ import {
     getAuth,
     GoogleAuthProvider,
     signInWithPopup,
-    signOut
+    signOut,
+    onAuthStateChanged
   } from 'firebase/auth';
   import {
     getFirestore,
@@ -33,7 +34,7 @@ export async function authWithGoogle() {
 }
 
 export function isUserLoggedIn() {
-    return getAuth();
+    return !!getAuth().currentUser;
 }
 
 export async function loadMedia(callback) {
